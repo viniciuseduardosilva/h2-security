@@ -19,7 +19,7 @@ public class Usuario {
 	private Integer id;
 	
 	@Column(unique = true)
-	private String usermane;
+	private String username;
 	
 	private String password;
 }

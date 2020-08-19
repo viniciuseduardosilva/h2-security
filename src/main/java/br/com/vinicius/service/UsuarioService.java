@@ -3,7 +3,6 @@ package br.com.vinicius.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ public class UsuarioService implements UserDetailsService {
 				.orElseThrow(()-> new UsernameNotFoundException("login nao encontrado"));
 		
 		return User.builder()
-				.username(usuario.getUsermane())
+				.username(usuario.getUsername())
 				.password(usuario.getPassword())
 				.roles("USER")
 				.build();
