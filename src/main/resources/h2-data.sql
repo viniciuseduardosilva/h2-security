@@ -1,0 +1,6 @@
+CREATE TABLE CLIENTE (
+    NOME VARCHAR(100),
+    TELEFONE VARCHAR(11),
+    EMAIL VARCHAR(100) PRIMARY KEY,
+    cadastro timestamp
+);
