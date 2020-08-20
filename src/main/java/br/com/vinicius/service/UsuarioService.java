@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.vinicius.model.Usuario;
@@ -18,9 +19,10 @@ public class UsuarioService implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		System.out.println("aaaaaaaaaa");
 		Usuario usuario = usuarioRepository.findByUsername(username)
 				.orElseThrow(()-> new UsernameNotFoundException("login nao encontrado"));
+		
+		
 		
 		return User.builder()
 				.username(usuario.getUsername())

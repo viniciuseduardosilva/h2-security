@@ -20,14 +20,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Cliente {
+	
 	@Id
-	@Column(length = 100)
 	private String email;
 	
-	@Column(length = 100)
 	private String nome;
 	
-	@Column(length = 100)
 	private String telefone;
 	
 	@Column(updatable = false)
